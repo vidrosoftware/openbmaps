@@ -1,0 +1,25 @@
+{
+  "name": "realtime",
+  "version": "1.0.0",
+  "description": "",
+  "main": "realtime.js",
+  "scripts": {
+    "watch": "watchify -g [ babelify --presets [ @babel/preset-env ] ] realtime.js -o ../src/realtime.dist.js",
+    "dist": "browserify -g [ babelify --presets [ @babel/preset-env ] ] realtime.js -o ../src/realtimeBundle.js | uglifyjs ../src/realtimeBundle.js -mc > ../dist/realtimeBundle.$npm_package_version.min.js"
+
+  },
+  "author": "Vidro Software SL",
+  "license": "ISC",
+  "devDependencies": {
+    "@babel/core": "^7.2.2",
+    "@babel/polyfill": "^7.2.5",
+    "@babel/preset-env": "^7.2.3",
+    "babel": "^6.23.0",
+    "babel-register": "^6.26.0",
+    "babelify": "^10.0.0"
+  },
+  "dependencies": {
+    "@pw2016/logger": "^2.0.1",
+    "socket.io-client": "^2.2.0"
+  }
+}
